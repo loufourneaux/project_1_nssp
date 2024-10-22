@@ -10,7 +10,7 @@ nipype
 
 
 # Preprocessing
-BET: skull stripping??
+BET: skull stripping?? -> bc no registration to MNI space needed i don't think necessary 
 FAST: tissue segmentation -> useful bc want to look at specific areas for our study
 MCFLIRT: motion correction
 standardize: for camparision and concatenation
