@@ -6,3 +6,14 @@ In this dataset, participants listened in blocks of 33 seconds to positive or ne
 
 ## Dependencies 
 nipype
+
+
+
+# Preprocessing
+BET: skull stripping??
+FAST: tissue segmentation -> useful bc want to look at specific areas for our study
+MCFLIRT: motion correction
+standardize: for camparision and concatenation
+SUSAN: spatial smoothing 
+slice timing correction? If the acquisition was done with a multi-slice technique, this step corrects for the timing differences in slice acquisition, ensuring accurate alignment of temporal data.
+
