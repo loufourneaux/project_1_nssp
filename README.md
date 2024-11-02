@@ -6,6 +6,7 @@ In this dataset, participants listened in blocks of 33 seconds to positive or ne
 
 ## Dependencies 
 nipype
+nilearn
 
 
 
