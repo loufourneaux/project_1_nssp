@@ -1,5 +1,6 @@
 import os
 from tqdm import tqdm
+import subprocess
 from fsl.wrappers import mcflirt, fslmaths, fslmerge
 
 # Set directories
@@ -54,5 +55,15 @@ smoothed_output_path = os.path.join(output_dir_func, 'concatenated_standardized_
 if not os.path.exists(smoothed_output_path):
     print("Running spatial smoothing with 4mm Gaussian kernel...")
     fslmaths(mc_output_path).s(4/2.3458).run(smoothed_output_path)
+
+
+# Step 5: Identify Signal Artifacts
+outliers_output_path = os.path.join(output_dir_func, 'motion_outliers.txt')
+outlier_metric_output_path = os.path.join(output_dir_func, 'motion_metric.txt')
+outlier_pic_output_path = os.path.join(output_dir_func, 'motion_metric.png')
+if not os.path.exists(outliers_output_path):
+    print("Identifying volumes with excessive motion or signal artifacts...")
+    subprocess.run(f"fsl_motion_outliers  -i {concat_output_path} -o {outliers_output_path} -s {outlier_metric_output_path} -p {outlier_pic_output_path} --dvars ", shell=True)
+
 
 print("Preprocessing completed!")
