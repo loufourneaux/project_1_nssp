@@ -5,8 +5,8 @@ from fsl.wrappers import mcflirt, fslmaths, fslmerge
 
 # Set directories
 data_dir = 'gdrive_ds000171/sub-control01'  #change to you data folder
-output_dir_anat = 'sub_control01_preprocessed/anat'
-output_dir_func = 'sub_control01_preprocessed/func'
+output_dir_anat = 'derivatives/sub_control01_preprocessed/anat'
+output_dir_func = 'derivatives/sub_control01_preprocessed/func'
 subject_id = 'sub-control01'
 
 
